@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<ss_extensions translate="label" module="couponmail">
+            <label>Mageguru Birthday mail</label>
+            <sort_order>21</sort_order>
+        </ss_extensions>
+	  </tabs>
+	  <sections>
+		<birthday_coupon  translate="label" module="couponmail">                    
+		<label>Birthday Mail n Coupon</label>
+		<tab>ss_extensions</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>12</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <birthday_mail translate="label"> 
+					  <label>Mail Settings</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>34</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <birthdaymail_enable translate="label">
+                            <label>Enable Birthday Mail</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>43</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enable/Disable mail sending for birthday</comment>
+                          </birthdaymail_enable>
+                          <image_logo translate="label">
+                            <label>Email Logo</label>
+                            <frontend_type>image</frontend_type>
+                            <backend_model>adminhtml/system_config_backend_image</backend_model>
+                            <upload_dir config="system/filesystem/media" scope_info="1">catalog/product/watermark</upload_dir>
+                            <base_url type="media" scope_info="1">catalog/product/watermark</base_url>
+                            <sort_order>188</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Email header image</comment>
+                          </image_logo>
+                          <email_sender translate="label">
+                            <label>Select Email Sender</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>213</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </email_sender>
+                          <time translate="label">
+                            <label>Cron Start Time</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>410</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </time>
+                        <frequency translate="label">
+                            <label>Cron Frequency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_cron_frequency</source_model>
+                            <backend_model>couponmail/adminhtml_system_config_backend_couponmail_cron</backend_model>
+                            <sort_order>420</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </frequency>
+                          
+					   </fields>
+					   </birthday_mail>
+				      <discount_settings translate="label"> 
+					  <label>Coupon Settings</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>56</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <discount_enable translate="label">
+                            <label>Enable Coupon</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>56</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enable/Disable coupon generation to send with email</comment>
+                          </discount_enable>
+                          <discount_prefix translate="label">
+                            <label>Coupon Prefix</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>123</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Any starting text you want in your generated coupon</comment>
+                          </discount_prefix>
+                          <discount_suffix translate="label">
+                            <label>Coupon Suffix</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>231</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Any end text you want in your generated coupon</comment>
+                          </discount_suffix>
+                          <discount_type translate="label">
+                            <label>Coupon Discount Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>couponmail/discount_options</source_model>
+                            <sort_order>241</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Discount type set on total amount</comment>
+                          </discount_type>
+                          <applied_discount_amount translate="label">
+                            <label>Discount Amount</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>321</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enter discount amount</comment>
+                          </applied_discount_amount>
+                          <discount_expiry translate="label">
+                            <label>Coupon Valid for</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>332</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Enter no of days for expiry of coupon</comment>
+                          </discount_expiry>
+					   </fields>
+					   </discount_settings>
+					</groups>
+		</birthday_coupon>
+	  </sections>
+</config>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package>
+    <name>BirthdayMailnCoupon</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>OSL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Birthday Mail n Coupon extension is designed to automatically wish your customers on their birthday.</summary>
+    <description>Birthday Mail n Coupon extension is designed to automatically wish your customers on their birthday.&#xD;
+It automatically detects store customers birthday and send a mail on  their birthday&#xD;
+. Admin can schedule mail time and mail data and image from back-end.&#xD;
+Your Customer Will also receive coupon-code for discount which&#xD;
+is configured by admin from admin very easily.</description>
+    <notes>Birthday Mail n Coupon extension is designed to automatically wish your customers on their birthday.&#xD;
+It automatically detects store customers birthday and send a mail on  their birthday&#xD;
+. Admin can schedule mail time and mail data and image from backend.&#xD;
+Your Customer Will also recieve coupon-code for discount which&#xD;
+is configured by admin from admin very easily.&#xD;
+&#xD;
+&#xD;
+Features:&#xD;
+&#xD;
+1. Send Birthday Mail to Store customer on their Birthday automatically.&#xD;
+2. Use of Cron for sending emails automatically.&#xD;
+3. Coupon Code Send Option which is fully customizable from backend.&#xD;
+4. Customizable Image in email recieved by customer.&#xD;
+5. Set Cron time according to need.&#xD;
+6. Set Cron frequency.&#xD;
+7. Set Coupon discount type - Fixed or Percent.&#xD;
+8. Set Coupon Suffix and Pre-fix.&#xD;
+9. Set Coupon Expiry Date.</notes>
+    <authors><author><name>developer</name><user>developer</user><email>mageguruindia@gmail.com</email></author></authors>
+    <date>2016-01-15</date>
+    <time>16:19:17</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Mageguru_Couponmail.xml" hash="73ca23674ca4e96f627093ad109b798e"/></dir></target><target name="magecommunity"><dir name="Mageguru"><dir name="Couponmail"><dir name="Block"><dir name="Adminhtml"><dir name="Emailcoupon"><file name="Grid.php" hash="7e0700dc50111ca9b279bb1b82ed8037"/></dir><file name="Emailcoupon.php" hash="d01bafc13bf5e0ce02a37db43e0887f6"/></dir></dir><dir name="Helper"><file name="Data.php" hash="867864d3fdd58f9966d399335edeb792"/></dir><dir name="Model"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Backend"><dir name="Couponmail"><file name="Cron.php" hash="3e645f71bd46fedc799160c36d546479"/></dir></dir></dir></dir></dir><dir name="Discount"><file name="Options.php" hash="13906c30ffd2ae35a23edab6c981cbea"/></dir><file name="Emailcoupon.php" hash="91ad329358dc2aedfdab32cdcdee48b6"/><dir name="Mysql4"><dir name="Emailcoupon"><file name="Collection.php" hash="1976f82b9066462ac61b720e45e3c1b2"/></dir><file name="Emailcoupon.php" hash="d9cb3b78e6ce5f82e38326b3e0e8da7a"/></dir><file name="Observer.php" hash="c61cc64eb8b1e6f00ae4931d20579ffe"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="EmailcouponController.php" hash="b82f8593ee989545e093217ca2ad10c3"/></dir></dir><dir name="etc"><file name="config.xml" hash="ed4660cd11b881a1e0e1c2cd8656c872"/><file name="system.xml" hash="66002ec1ae556a12b03ab5552906c2c2"/><file name="system.xml~" hash="66002ec1ae556a12b03ab5552906c2c2"/></dir><dir name="sql"><dir name="couponmail_setup"><file name="mysql4-install-1.0.0.php" hash="753ea1275c0eaa2aff0c0f699d42b798"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="couponmail.xml" hash="afd60dac2116fb856ccbd8842ff72e36"/></dir></dir></dir></dir></target><target name="magelocal"><dir name="en_US"><dir name="template"><dir name="email"><file name="customer_birthday.html" hash=""/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

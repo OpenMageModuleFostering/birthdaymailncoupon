@@ -1,0 +1,135 @@
+<config>
+    <modules>
+		<Mageguru_Couponmail>
+			<version>1.0.0</version>
+		</Mageguru_Couponmail>
+	</modules>
+    <global>
+		<models>
+            <couponmail>
+                <class>Mageguru_Couponmail_Model</class>
+				<resourceModel>couponmail_mysql4</resourceModel>
+            </couponmail>
+			<couponmail_mysql4>
+				<class>Mageguru_Couponmail_Model_Mysql4</class>
+				<entities>
+					<emailcoupon>
+						<table>mageguru_email_send_log</table>
+					</emailcoupon>
+				</entities>
+			</couponmail_mysql4>
+        </models>
+		<resources>
+			<couponmail_setup>
+				<setup>
+					<module>Mageguru_Couponmail</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</couponmail_setup>
+			<couponmail_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</couponmail_write>
+			<couponmail_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</couponmail_read>
+		</resources>
+        <helpers>
+            <couponmail>
+                <class>Mageguru_Couponmail_Helper</class>
+            </couponmail>
+        </helpers>
+		<blocks>
+			<couponmail>
+				<class>Mageguru_Couponmail_Block</class>
+			</couponmail>
+		</blocks>
+		<template>
+                <email>
+                    <couponmail_email_template translate="label" module="couponmail">
+                        <label>Customer Birthday Mail</label>
+                        <file>customer_birthday.html</file>
+                        <type>html</type>
+                    </couponmail_email_template>
+                </email>
+        </template>
+    </global>
+    <admin>
+		<routers>
+			<couponmail>
+				<use>admin</use>
+				<args>
+					<module>Mageguru_Couponmail</module>
+					<frontName>admin_couponmail</frontName>
+				</args>
+			</couponmail>
+		</routers>
+	</admin>
+    <adminhtml>
+        <menu>
+            <couponmail module="couponmail">
+              <title>Couponmail</title>
+              <sort_order>100</sort_order>
+              <children>
+                <emailcoupon module="couponmail">
+                  <title>Manage Emailcoupon</title>
+                  <sort_order>10</sort_order>
+                  <action>admin_couponmail/adminhtml_emailcoupon</action>
+                </emailcoupon>
+              </children>
+            </couponmail>
+          </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<birthday_coupon translate="title" module="couponmail">
+											<title>Birthday Mail n Coupon Section</title>
+											<sort_order>12</sort_order>
+										</birthday_coupon>
+									</children>
+								</config>
+							</children>
+						</system>
+                        <couponmail translate="title" module="couponmail">
+                            <title>Couponmail</title>
+                            <sort_order>1000</sort_order>
+                            <children>
+                                <emailcoupon translate="title">
+                                    <title>Manage Emailcoupon</title>
+                                    <sort_order>10</sort_order>
+                                </emailcoupon>
+                            </children>
+                        </couponmail>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+        <layout>
+            <updates>
+                <couponmail>
+                    <file>couponmail.xml</file>
+                </couponmail>
+            </updates>
+        </layout>
+    </adminhtml>
+    <crontab>
+        <jobs>
+            <birthday_coupon_send>
+                <run><model>couponmail/observer::checkbirthday</model></run>
+            </birthday_coupon_send>
+        </jobs>
+    </crontab>
+</config>
