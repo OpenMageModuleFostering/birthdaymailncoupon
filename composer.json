@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/BirthdayMailnCoupon",
+    "name": "openmage-module-fostering\/birthdaymailncoupon",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Birthday Mail n Coupon extension is designed to automatically wish your customers on their birthday.",
     "authors": [
